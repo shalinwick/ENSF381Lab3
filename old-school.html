@@ -1,33 +1,20 @@
-<!--
-=========================================================
-Name        : index.html
-Assignment  : Lab 3 Exercise B
-Author(s)   : Mahdi Ansari, William Arthur Philip Louis
-Submission  : May 21, 2030
-Description : Understanding Old-School HTML Layouts.
-=========================================================
--->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Table Layout Webpage</title>
     <style>
-        table { width: 100%; }
-        td { vertical-align: top;}
-        /*
-        td { border: 1px dashed gray; } 
-        */
+        table { width: 100%; border-collapse: collapse; }
+        td { vertical-align: top; }
+        /* td { border: 1px dashed gray; } */
         #header, #footer { background-color: #f2f2f2; text-align: center; padding: 10px; }
         #menu { width: 150px; background-color: #e6e6e6; }
         #main { padding: 15px; }
-        #footer { position: fixed; bottom: 0; width: 100%;}
+        #footer { position: fixed; bottom: 0; width: 100%; }
 
         .news-item { padding: 10px; }
-        /*
         .large { width: 100%; }
         .medium { width: 70%; }
         .small { width: 30%; }
-        */
     </style>
 </head>
 <body>
@@ -39,14 +26,14 @@ Description : Understanding Old-School HTML Layouts.
     <tr>
         <td id="menu">
             <!-- Menu Items -->
-            <p><a href="google.com" target="_blank">Google</a></p>
-            <p><a href="ucalgary.ca" target="_parent">UofC</a></p>
+            <p><a href="https://google.com" target="_blank">Google</a></p>
+            <p><a href="https://ucalgary.ca" target="_parent">UofC</a></p>
         </td>
         <td id="main">
-            <table id="main-table">
+            <!-- Large news item -->
+            <table class="large">
                 <tr>
-                    <td class="large news-item"> 
-                        <!-- Large news item -->
+                    <td class="news-item"> 
                         <header>
                             <h1>Revolutionary New Computer Changes the Tech World</h1>
                         </header>
@@ -64,11 +51,11 @@ Description : Understanding Old-School HTML Layouts.
                         </article>
                     </td>
                 </tr>
+            </table>
+            <!-- Small and Medium news items -->
+            <table width="100%">
                 <tr>
-                    
-                    <td class="small news-item" colspan="2">
-                        <!-- Small news item -->
-
+                    <td class="small news-item">
                         <header>
                             <h1>Calgary's Natural Beauty Captivates Tourists</h1>
                         </header>
@@ -85,12 +72,10 @@ Description : Understanding Old-School HTML Layouts.
                             <h3>A Green Transformation</h3>
                             <p>The transformation of the city into a green paradise has been praised by environmentalists, calling it a perfect blend of urban development and nature conservation.</p>
                         </article>
-
                     </td>
                     <td class="medium news-item">
-                        <!-- Medium news item -->
                         <header>
-                            <h1>Mahdi Ansari Takes a Historic Spacewalk Near the ISS</h1>
+                            <h1>Mohit Kaila Takes a Historic Spacewalk Near the ISS</h1>
                         </header>
 
                         <img src="images/medium.jpg" alt="Medium Image" width="100%">
@@ -104,11 +89,9 @@ Description : Understanding Old-School HTML Layouts.
                             <h3>Pushing the Boundaries of Science</h3>
                             <p>The successful spacewalk not only demonstrates human resilience but also advances our understanding of space and our capabilities to explore further into the unknown.</p>
                         </article>
-                    </td>                
-                    
+                    </td>
                 </tr>
             </table>
-            
         </td>
     </tr>
     <tr>
